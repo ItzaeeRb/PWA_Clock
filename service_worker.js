@@ -3,13 +3,13 @@ const CACHE_NAME = 'reloj-pwa-cache-v1';
 
 // Archivos que se almacenarán en caché
 const ARCHIVOS_A_CACHEAR = [
-    './',
-    './index.html',
-    './style.css',
-    './script.js',
-    './manifest.json',
-    './icons/icon-512.png'
-  ];
+  '/',
+  '/index.html',
+  '/style.css',
+  '/script.js',
+  '/manifest.json',
+  '/icons/icon-512.png'
+];
 
 // Evento de instalación
 self.addEventListener('install', event => {
