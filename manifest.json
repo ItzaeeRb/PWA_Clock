@@ -1,0 +1,17 @@
+{
+    "short_name": "Reloj",
+    "name": "Reloj del Sistema",
+     "icons": [
+      {
+        "src": "icons/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#1e1e2f",
+    "theme_color": "#1e1e2f",
+    "orientation": "portrait"   
+  }
+  

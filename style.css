@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg,
+    #FFDEE9,  /* amanecer rosado */
+    #B5FFFC,  /* amanecer celeste */
+    #ff6749,  /* atardecer rojo */
+    #F09819,  /* atardecer naranja */
+    #2a2f61,  /* anochecer azul oscuro */
+    #004e92,  /* anochecer más intenso */
+    #FFDEE9   /* regreso a amanecer */
+  );
+  background-size: 1000% 1000%;
+  animation: moverGradiente 30s ease infinite;
+  font-family: monospace;
+}
+
+#watch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  color: white;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  box-shadow: inset 0px 0px 20px 0px white;
+  position: relative;
+  margin-bottom: 20px; /* Separación con el digital */
+}
+
+#digital {
+  color: white;
+  font-size: 2.5rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#watch div {
+  position: absolute;
+  transform-origin: bottom;
+}
+
+#watch div#hours {
+  height: 25%;
+  top: 25%;
+  border: 2px solid black;
+}
+
+#watch div#minutes {
+  height: 35%;
+  top: 15%;
+  border: 2px solid black;
+}
+
+#watch div#seconds {
+  height: 40%;
+  top: 10%;
+  border: 2px solid white;
+}
+
+.mark {
+  position: absolute;
+  width: 4px;
+  height: 10px;
+  background: white;
+  top: 45%;
+  left: 49%;
+  transform-origin: center bottom;
+}
+
+/* Distribuir 12 marcas en círculo (cada 30°) */
+.mark1  { transform: rotate(0deg)   translateY(-90px); }
+.mark2  { transform: rotate(30deg)  translateY(-90px); }
+.mark3  { transform: rotate(60deg)  translateY(-90px); }
+.mark4  { transform: rotate(90deg)  translateY(-90px); }
+.mark5  { transform: rotate(120deg) translateY(-90px); }
+.mark6  { transform: rotate(150deg) translateY(-90px); }
+.mark7  { transform: rotate(180deg) translateY(-90px); }
+.mark8  { transform: rotate(210deg) translateY(-90px); }
+.mark9  { transform: rotate(240deg) translateY(-90px); }
+.mark10 { transform: rotate(270deg) translateY(-90px); }
+.mark11 { transform: rotate(300deg) translateY(-90px); }
+.mark12 { transform: rotate(330deg) translateY(-90px); }
+
+@keyframes moverGradiente {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
