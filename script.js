@@ -26,3 +26,33 @@ function actualizarReloj() {
   // Iniciar actualización cada segundo
   setInterval(actualizarReloj, 1000);
   
+  // PWA: botón de instalación
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = 'block';
+
+  installBtn.addEventListener('click', () => {
+    installBtn.style.display = 'none';
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(choiceResult => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('✅ App instalada');
+      } else {
+        console.log('❌ Instalación cancelada');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('✅ SW registrado:', reg.scope))
+      .catch(err => console.error('❌ Error registrando SW:', err));
+  });
+}
